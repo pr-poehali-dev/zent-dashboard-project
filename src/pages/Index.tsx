@@ -314,7 +314,7 @@ const Index = () => {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="font-semibold">{data.month}</span>
-                    <span className="text-muted-foreground">${(data.fees / 1000).toFixed(0)}K</span>
+                    <span className="text-muted-foreground">In procces</span>
                   </div>
                   <div className="h-12 bg-muted rounded-lg overflow-hidden flex">
                     <div
