@@ -56,11 +56,15 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-2xl font-heading font-black text-background">Z</span>
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-lg rotate-45" />
+                <div className="absolute inset-0.5 bg-background rounded-lg rotate-45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xl font-heading font-bold text-gradient z-10">Z</span>
+                </div>
               </div>
-              <span className="text-2xl font-heading font-black tracking-tighter">ZENT</span>
+              <span className="text-2xl font-heading font-semibold tracking-wide">ZENT</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
@@ -96,7 +100,7 @@ const Index = () => {
               Powered by Solana
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-heading font-black tracking-tighter">
+            <h1 className="text-6xl md:text-8xl font-heading font-bold tracking-tight">
               <span className="text-gradient glow">ZENT</span>
             </h1>
             
@@ -154,7 +158,7 @@ const Index = () => {
       <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-heading font-black mb-4">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
               About <span className="text-gradient">ZENT</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -203,7 +207,7 @@ const Index = () => {
       <section id="tokenomics" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-heading font-black mb-4">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
               <span className="text-gradient">Tokenomics</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -217,7 +221,7 @@ const Index = () => {
               <div className="relative">
                 <div className="flex items-center justify-between mb-8">
                   <div>
-                    <div className="text-6xl font-heading font-black text-gradient mb-2">70%</div>
+                    <div className="text-6xl font-heading font-bold text-gradient mb-2">70%</div>
                     <h3 className="text-2xl font-heading font-bold">To Holders</h3>
                   </div>
                   <Icon name="Users" className="text-primary" size={48} />
@@ -234,7 +238,7 @@ const Index = () => {
               <div className="relative">
                 <div className="flex items-center justify-between mb-8">
                   <div>
-                    <div className="text-6xl font-heading font-black text-gradient mb-2">30%</div>
+                    <div className="text-6xl font-heading font-bold text-gradient mb-2">30%</div>
                     <h3 className="text-2xl font-heading font-bold">To Growth</h3>
                   </div>
                   <Icon name="Rocket" className="text-secondary" size={48} />
@@ -276,7 +280,7 @@ const Index = () => {
       <section id="dashboard" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-heading font-black mb-4">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
               <span className="text-gradient">Dashboard</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -375,7 +379,7 @@ const Index = () => {
 
       <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl md:text-6xl font-heading font-black mb-6">
+          <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
             Join the <span className="text-gradient">Revolution</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -415,11 +419,15 @@ const Index = () => {
       <footer className="border-t border-border py-8 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-lg font-heading font-black text-background">Z</span>
+            <div className="flex items-center gap-3">
+              <div className="relative w-8 h-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-lg rotate-45" />
+                <div className="absolute inset-0.5 bg-background rounded-lg rotate-45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-base font-heading font-bold text-gradient z-10">Z</span>
+                </div>
               </div>
-              <span className="text-xl font-heading font-black">ZENT</span>
+              <span className="text-xl font-heading font-semibold tracking-wide">ZENT</span>
             </div>
             
             <p className="text-sm text-muted-foreground">
