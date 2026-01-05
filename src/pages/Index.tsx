@@ -57,10 +57,14 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <span className="text-xl font-mono font-bold text-primary-foreground">Z</span>
+              <div className="relative w-10 h-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-lg rotate-45" />
+                <div className="absolute inset-0.5 bg-background rounded-lg rotate-45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xl font-heading font-bold text-gradient z-10">Z</span>
+                </div>
               </div>
-              <span className="text-2xl font-semibold tracking-tight uppercase">ZENT</span>
+              <span className="text-2xl font-heading font-semibold tracking-wide">ZENT</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
@@ -92,20 +96,20 @@ const Index = () => {
       <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-primary/5 border border-primary/10 text-primary text-xs font-mono font-medium uppercase tracking-wider mb-4">
+            <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-4">
               Powered by Solana
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-bold tracking-tighter uppercase">
-              <span className="text-primary">ZENT</span>
+            <h1 className="text-6xl md:text-8xl font-heading font-bold tracking-tight">
+              <span className="text-gradient glow">ZENT</span>
             </h1>
             
-            <p className="text-xl md:text-2xl font-medium text-foreground max-w-2xl mx-auto tracking-tight">
+            <p className="text-2xl md:text-3xl font-heading font-semibold text-muted-foreground max-w-2xl mx-auto">
               Transparency That Pays
             </p>
             
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Revolutionary revenue-sharing model: 70% to holders, 30% to growth.<br/>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Revolutionary revenue-sharing model: 70% to holders, 30% to growth. 
               Real-time transparency. Zero compromises.
             </p>
 
@@ -113,18 +117,20 @@ const Index = () => {
               <Button
                 onClick={() => scrollToSection('about')}
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium text-base px-10 uppercase tracking-wider"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-8"
               >
                 Learn More
+                <Icon name="ArrowRight" className="ml-2" size={20} />
               </Button>
               
               <Button
                 onClick={() => scrollToSection('dashboard')}
                 size="lg"
                 variant="outline"
-                className="border-primary text-foreground hover:bg-primary hover:text-primary-foreground font-medium text-base px-10 uppercase tracking-wider"
+                className="border-primary/20 text-foreground hover:bg-primary/10 font-semibold text-lg px-8"
               >
-                Dashboard
+                <Icon name="BarChart3" className="mr-2" size={20} />
+                View Dashboard
               </Button>
             </div>
 
@@ -138,10 +144,10 @@ const Index = () => {
                   <div className="flex justify-center mb-2">
                     <Icon name={stat.icon as any} className="text-primary" size={24} />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-primary font-mono">
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-gradient">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -152,8 +158,8 @@ const Index = () => {
       <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
-              About <span className="text-primary">ZENT</span>
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
+              About <span className="text-gradient">ZENT</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Zenith Entry Network redefines crypto transparency through automated, 
@@ -162,33 +168,33 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 bg-card border-border hover:border-primary transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/5 border border-primary/20 flex items-center justify-center mb-6">
+            <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <Icon name="Shield" className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase tracking-wide">Full Transparency</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">Full Transparency</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Every transaction, every distribution, every decision — visible on-chain. 
                 No hidden fees, no surprises.
               </p>
             </Card>
 
-            <Card className="p-8 bg-card border-border hover:border-primary transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/5 border border-primary/20 flex items-center justify-center mb-6">
-                <Icon name="Zap" className="text-primary" size={32} />
+            <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow">
+              <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                <Icon name="Zap" className="text-secondary" size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase tracking-wide">Solana Speed</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">Solana Speed</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Built on Solana for lightning-fast transactions and minimal fees. 
                 Enterprise-grade performance.
               </p>
             </Card>
 
-            <Card className="p-8 bg-card border-border hover:border-primary transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/5 border border-primary/20 flex items-center justify-center mb-6">
+            <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <Icon name="TrendingUp" className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase tracking-wide">Sustainable Growth</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">Sustainable Growth</h3>
               <p className="text-muted-foreground leading-relaxed">
                 30% allocated to strategic buybacks and partnerships. 
                 Long-term value for all holders.
@@ -201,8 +207,8 @@ const Index = () => {
       <section id="tokenomics" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
-              <span className="text-primary">Tokenomics</span>
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
+              <span className="text-gradient">Tokenomics</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Fair, transparent, and aligned with holder interests
@@ -210,15 +216,16 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-10 bg-card border-border">
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <div className="text-7xl font-bold text-primary font-mono mb-2">70%</div>
-                  <h3 className="text-xl font-bold uppercase tracking-wide">To Holders</h3>
+            <Card className="p-10 bg-card border-border relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <div className="text-6xl font-heading font-bold text-gradient mb-2">70%</div>
+                    <h3 className="text-2xl font-heading font-bold">To Holders</h3>
+                  </div>
+                  <Icon name="Users" className="text-primary" size={48} />
                 </div>
-                <Icon name="Users" className="text-primary" size={48} />
-              </div>
-              <div>
                 <p className="text-muted-foreground leading-relaxed">
                   Majority of trading fees distributed directly to token holders. 
                   Automatic, proportional, transparent.
@@ -226,15 +233,16 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-10 bg-card border-border">
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <div className="text-7xl font-bold text-primary font-mono mb-2">30%</div>
-                  <h3 className="text-xl font-bold uppercase tracking-wide">To Growth</h3>
+            <Card className="p-10 bg-card border-border relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <div className="text-6xl font-heading font-bold text-gradient mb-2">30%</div>
+                    <h3 className="text-2xl font-heading font-bold">To Growth</h3>
+                  </div>
+                  <Icon name="Rocket" className="text-secondary" size={48} />
                 </div>
-                <Icon name="Rocket" className="text-primary" size={48} />
-              </div>
-              <div>
                 <p className="text-muted-foreground leading-relaxed">
                   Strategic buybacks, partnerships, and ecosystem development. 
                   Building long-term value.
@@ -244,12 +252,12 @@ const Index = () => {
           </div>
 
           <Card className="p-10 bg-card border-border">
-            <h3 className="text-2xl font-bold mb-8 text-center uppercase tracking-wide">Distribution Breakdown</h3>
+            <h3 className="text-3xl font-heading font-bold mb-8 text-center">Distribution Breakdown</h3>
             <div className="space-y-6">
               {[
                 { label: 'Holder Rewards', percent: 70, color: 'bg-primary' },
-                { label: 'Buyback Program', percent: 20, color: 'bg-primary/70' },
-                { label: 'Partnerships', percent: 10, color: 'bg-primary/40' },
+                { label: 'Buyback Program', percent: 20, color: 'bg-secondary' },
+                { label: 'Partnerships', percent: 10, color: 'bg-primary/50' },
               ].map((item, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
@@ -272,8 +280,8 @@ const Index = () => {
       <section id="dashboard" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
-              <span className="text-primary">Dashboard</span>
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-4">
+              <span className="text-gradient">Dashboard</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real-time metrics and transparent distribution
@@ -284,23 +292,23 @@ const Index = () => {
             {stats.map((stat, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card border-border hover:border-primary transition-all duration-300"
+                className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/5 border border-primary/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name={stat.icon as any} className="text-primary" size={24} />
                   </div>
-                  <div className="text-3xl font-bold text-primary font-mono mb-2">
+                  <div className="text-3xl font-heading font-bold text-gradient mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               </Card>
             ))}
           </div>
 
           <Card className="p-8 bg-card border-border mb-8">
-            <h3 className="text-xl font-bold mb-6 uppercase tracking-wide">Revenue Distribution Over Time</h3>
+            <h3 className="text-2xl font-heading font-bold mb-6">Revenue Distribution Over Time</h3>
             <div className="space-y-4">
               {chartData.map((data, index) => (
                 <div key={index} className="space-y-2">
@@ -308,7 +316,7 @@ const Index = () => {
                     <span className="font-semibold">{data.month}</span>
                     <span className="text-muted-foreground">${(data.fees / 1000).toFixed(0)}K</span>
                   </div>
-                  <div className="h-12 bg-muted overflow-hidden flex">
+                  <div className="h-12 bg-muted rounded-lg overflow-hidden flex">
                     <div
                       className="bg-primary flex items-center justify-center text-xs font-semibold text-primary-foreground"
                       style={{ width: `${(data.distributed / data.fees) * 100}%` }}
@@ -316,7 +324,7 @@ const Index = () => {
                       70%
                     </div>
                     <div
-                      className="bg-primary/70 flex items-center justify-center text-xs font-semibold text-primary-foreground"
+                      className="bg-secondary flex items-center justify-center text-xs font-semibold text-secondary-foreground"
                       style={{ width: `${(data.buyback / data.fees) * 100}%` }}
                     >
                       30%
@@ -330,38 +338,38 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-8 bg-card border-border">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/5 border border-primary/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Icon name="PieChart" className="text-primary" size={24} />
                 </div>
-                <h3 className="text-lg font-bold uppercase tracking-wide">Distribution Model</h3>
+                <h3 className="text-xl font-heading font-bold">Distribution Model</h3>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-muted">
+                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
                   <span className="font-semibold">Holder Rewards</span>
-                  <span className="text-2xl font-bold text-primary font-mono">70%</span>
+                  <span className="text-2xl font-heading font-bold text-primary">70%</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-muted">
+                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
                   <span className="font-semibold">Buyback & Growth</span>
-                  <span className="text-2xl font-bold text-primary font-mono">30%</span>
+                  <span className="text-2xl font-heading font-bold text-secondary">30%</span>
                 </div>
               </div>
             </Card>
 
             <Card className="p-8 bg-card border-border">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/5 border border-primary/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Icon name="Activity" className="text-primary" size={24} />
                 </div>
-                <h3 className="text-lg font-bold uppercase tracking-wide">Network Activity</h3>
+                <h3 className="text-xl font-heading font-bold">Network Activity</h3>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-muted">
+                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
                   <span className="font-semibold">24h Volume</span>
-                  <span className="text-2xl font-bold text-primary font-mono">$1.2M</span>
+                  <span className="text-2xl font-heading font-bold text-primary">$1.2M</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-muted">
+                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
                   <span className="font-semibold">Active Traders</span>
-                  <span className="text-2xl font-bold text-primary font-mono">3,847</span>
+                  <span className="text-2xl font-heading font-bold text-secondary">3,847</span>
                 </div>
               </div>
             </Card>
@@ -371,8 +379,8 @@ const Index = () => {
 
       <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-tight">
-            Join the <span className="text-primary">Revolution</span>
+          <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+            Join the <span className="text-gradient">Revolution</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             Be part of the most transparent revenue-sharing protocol in crypto
@@ -386,13 +394,13 @@ const Index = () => {
             ].map((contact, index) => (
               <Card
                 key={index}
-                className="p-8 bg-card border-border hover:border-primary transition-all duration-300 cursor-pointer"
+                className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer hover-scale"
               >
-                <div className="w-16 h-16 bg-primary/5 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Icon name={contact.icon as any} className="text-primary" size={28} />
                 </div>
-                <div className="text-xs text-muted-foreground mb-2 uppercase tracking-wider">{contact.label}</div>
-                <div className="font-mono text-sm">{contact.value}</div>
+                <div className="text-sm text-muted-foreground mb-2">{contact.label}</div>
+                <div className="font-semibold">{contact.value}</div>
               </Card>
             ))}
           </div>
@@ -400,9 +408,10 @@ const Index = () => {
           <Button
             onClick={() => scrollToSection('dashboard')}
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium text-base px-12 uppercase tracking-wider"
+            className="bg-gradient-to-r from-primary to-secondary text-background hover:opacity-90 font-semibold text-lg px-12 animate-pulse-glow"
           >
             Get Started Now
+            <Icon name="ArrowRight" className="ml-2" size={20} />
           </Button>
         </div>
       </section>
@@ -411,10 +420,14 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center">
-                <span className="text-base font-mono font-bold text-primary-foreground">Z</span>
+              <div className="relative w-8 h-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-lg rotate-45" />
+                <div className="absolute inset-0.5 bg-background rounded-lg rotate-45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-base font-heading font-bold text-gradient z-10">Z</span>
+                </div>
               </div>
-              <span className="text-xl font-semibold tracking-tight uppercase">ZENT</span>
+              <span className="text-xl font-heading font-semibold tracking-wide">ZENT</span>
             </div>
             
             <p className="text-sm text-muted-foreground">
